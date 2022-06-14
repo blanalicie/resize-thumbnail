@@ -13,11 +13,18 @@ YoutubeとTwitter用にサムネイルをサイズ変換します。
 
 ## Usage
 
+### コマンドラインによる実行
+
 - resize_thumbnail.py を実行してください。引数には以下のようにサムネイルのファイルパスを渡します。
   - `ex.) python resize_thumbnail.py /path/to/source-thumbnail-image.png`
 
-- 実行後、YoutubeとTwitter用のサムネイル画像が生成されます。
-  - 出力先は元画像と同じディレクトリ内です。
+- 実行後、元画像と同じディレクトリにYoutubeとTwitter用のサムネイル画像が生成されます。
+
+### ドラッグ＆ドロップによる実行 (Windowsのみ)
+
+- エクスプローラ上の操作で、resize_thumbnail.cmd にサムネイル画像ファイルをドラッグ＆ドロップしてください。
+
+- 実行後、元画像と同じディレクトリにYoutubeとTwitter用のサムネイル画像が生成されます。
 
 ----
 

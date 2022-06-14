@@ -13,8 +13,17 @@ Resize your thumbnail image for Youtube and Twitter.
 
 ## Usage
 
+### Run by Commandline
+
 - Run resize_thumbnail.py with thumbnail image file path.
   - `ex.) python resize_thumbnail.py /path/to/source-thumbnail-image.png`
+
+- Then thumbnail images (for Youtube and Twitter) will be generated in the same directory as the original image.
+
+
+### Run by Drag & Drop (Windows only)
+
+- On Explorer, Drag and Drop the thumbnail image file into resize_thumbnail.cmd.
 
 - Then thumbnail images (for Youtube and Twitter) will be generated in the same directory as the original image.
 
