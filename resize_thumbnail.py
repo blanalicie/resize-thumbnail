@@ -21,9 +21,9 @@ def get_shrink_ratio(source_file_size: int) -> float:
             raise Exception(f"Source image is too large: {source_file_size}")
     return shrink_ratio
 
-def resize_image_file(source_image, output_image_path: str, width: int, height: int):
+def resize_image_file(source_image, output_image_path: str, width: int, height: int, compress_flag: list = None):
     result_image = cv2.resize(source_image, (int(width), int(height)))
-    cv2.imwrite(output_image_path, result_image)
+    cv2.imwrite(output_image_path, result_image, compress_flag)
 
 
 def main(source_image_path: str):
@@ -33,13 +33,14 @@ def main(source_image_path: str):
     source_image_width = source_image.shape[1]
     source_image_height = source_image.shape[0]
     _, extension = os.path.splitext(source_image_path)
+    compress_flag = [ cv2.IMWRITE_PNG_COMPRESSION, 3 ] if extension.lower() == ".png" else None
     target_list = [
         ("youtube", source_image_width * shrink_ratio, source_image_height * shrink_ratio),
         ("twitter", 1280, 720),
     ]
     for target, width, height in target_list:
         output_image_path = re.sub(f"{extension}$", f"_{target}{extension}", source_image_path)
-        resize_image_file(source_image, output_image_path, width, height)
+        resize_image_file(source_image, output_image_path, width, height, compress_flag)
         print(f"Output resized image: {output_image_path}")
 
 
