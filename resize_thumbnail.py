@@ -61,7 +61,8 @@ def resize_image_file_for_youtube(source_image_path: str, output_image_path: str
             image_file_size = get_file_size(tmp_image_path)
         shutil.move(tmp_image_path, output_image_path)
     finally:
-        os.remove(tmp_image_path)
+        if os.path.exists(tmp_image_path):
+            os.remove(tmp_image_path)
 
 
 def main(source_image_path: str):
